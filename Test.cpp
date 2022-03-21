@@ -27,32 +27,32 @@ TEST_CASE("Bad input")
     /*
     Next we will check the read function, again Horizontal and Vertical.
     */
-    CHECK_THROWS(notebook.read(-1, 0, 0, Direction::Horizontal, 5));
-    CHECK_THROWS(notebook.read(0, -1, 0, Direction::Horizontal, 5));
-    CHECK_THROWS(notebook.read(0, 0, -1, Direction::Horizontal, 5));
-    CHECK_THROWS(notebook.read(0, 0, 168, Direction::Horizontal, 5));
-    CHECK_THROWS(notebook.read(0, 0, 0, Direction::Horizontal, -5));
+    CHECK_THROWS(notebook.read(-1, 0, 0, Direction::Horizontal, 7));
+    CHECK_THROWS(notebook.read(0, -1, 0, Direction::Horizontal, 7));
+    CHECK_THROWS(notebook.read(0, 0, -1, Direction::Horizontal, 7));
+    CHECK_THROWS(notebook.read(0, 0, 168, Direction::Horizontal, 7));
+    CHECK_THROWS(notebook.read(0, 0, 0, Direction::Horizontal, -7));
 
-    CHECK_THROWS(notebook.read(-1, 0, 0, Direction::Vertical, 5));
-    CHECK_THROWS(notebook.read(0, -1, 0, Direction::Vertical, 5));
-    CHECK_THROWS(notebook.read(0, 0, -1, Direction::Vertical, 5));
-    CHECK_THROWS(notebook.read(0, 0, 168, Direction::Vertical, 5));
-    CHECK_THROWS(notebook.read(0, 0, 0, Direction::Vertical, -5));
+    CHECK_THROWS(notebook.read(-1, 0, 0, Direction::Vertical, 7));
+    CHECK_THROWS(notebook.read(0, -1, 0, Direction::Vertical, 7));
+    CHECK_THROWS(notebook.read(0, 0, -1, Direction::Vertical, 7));
+    CHECK_THROWS(notebook.read(0, 0, 168, Direction::Vertical, 7));
+    CHECK_THROWS(notebook.read(0, 0, 0, Direction::Vertical, -7));
 
     /*
     Now we will check the erase function.
     */
-    CHECK_THROWS(notebook.erase(-1, 0, 0, Direction::Horizontal, 5));
-    CHECK_THROWS(notebook.erase(0, -1, 0, Direction::Horizontal, 5));
-    CHECK_THROWS(notebook.erase(0, 0, -1, Direction::Horizontal, 5));
-    CHECK_THROWS(notebook.erase(0, 0, 168, Direction::Horizontal, 5));
-    CHECK_THROWS(notebook.erase(0, 0, 0, Direction::Horizontal, -5));
+    CHECK_THROWS(notebook.erase(-1, 0, 0, Direction::Horizontal, 7));
+    CHECK_THROWS(notebook.erase(0, -1, 0, Direction::Horizontal, 7));
+    CHECK_THROWS(notebook.erase(0, 0, -1, Direction::Horizontal, 7));
+    CHECK_THROWS(notebook.erase(0, 0, 168, Direction::Horizontal, 7));
+    CHECK_THROWS(notebook.erase(0, 0, 0, Direction::Horizontal, -7));
 
-    CHECK_THROWS(notebook.erase(-1, 0, 0, Direction::Vertical, 5));
-    CHECK_THROWS(notebook.erase(0, -1, 0, Direction::Vertical, 5));
-    CHECK_THROWS(notebook.erase(0, 0, -1, Direction::Vertical, 5));
-    CHECK_THROWS(notebook.erase(0, 0, 168, Direction::Vertical, 5));
-    CHECK_THROWS(notebook.erase(0, 0, 0, Direction::Vertical, -5));
+    CHECK_THROWS(notebook.erase(-1, 0, 0, Direction::Vertical, 7));
+    CHECK_THROWS(notebook.erase(0, -1, 0, Direction::Vertical, 7));
+    CHECK_THROWS(notebook.erase(0, 0, -1, Direction::Vertical, 7));
+    CHECK_THROWS(notebook.erase(0, 0, 168, Direction::Vertical, 7));
+    CHECK_THROWS(notebook.erase(0, 0, 0, Direction::Vertical, -7));
 
     /*
     Even though it wasnt asked we will do a little check for the show function.
@@ -89,7 +89,7 @@ TEST_CASE("Check the write function on an existing line")
     /*
     Here we will "erase" the line and try to write on it on horizontal mode
     */
-    notebook.erase(0, 0, 0, Direction::Horizontal, 5);
+    notebook.erase(0, 0, 0, Direction::Horizontal, 7);
 
     CHECK_THROWS(notebook.write(0, 0, 0, Direction::Horizontal, MALAWAH));
     CHECK_THROWS(notebook.write(0, 0, 1, Direction::Horizontal, MALAWAH));
