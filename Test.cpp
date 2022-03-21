@@ -12,25 +12,32 @@ TEST_CASE("Bad input")
 {
     /*
     In this test case we will check if we get bad input from the user will we get an error,
-    first we will check the write function.
+    first we will check the write function in Horizonatl and Vertical mode.
     */
     CHECK_THROWS(notebook.write(-1, 0, 0, Direction::Horizontal, MALAWAH));
     CHECK_THROWS(notebook.write(0, -1, 0, Direction::Horizontal, MALAWAH));
     CHECK_THROWS(notebook.write(0, 0, -1, Direction::Horizontal, MALAWAH));
-    CHECK_THROWS(notebook.write(168, 0, 0, Direction::Horizontal, MALAWAH));
-    CHECK_THROWS(notebook.write(0, 168, 0, Direction::Horizontal, MALAWAH));
     CHECK_THROWS(notebook.write(0, 0, 168, Direction::Horizontal, MALAWAH));
 
+    CHECK_THROWS(notebook.write(-1, 0, 0, Direction::Vertical, MALAWAH));
+    CHECK_THROWS(notebook.write(0, -1, 0, Direction::Vertical, MALAWAH));
+    CHECK_THROWS(notebook.write(0, 0, -1, Direction::Vertical, MALAWAH));
+    CHECK_THROWS(notebook.write(0, 0, 168, Direction::Vertical, MALAWAH));
+
     /*
-    Next we will check the read function.
+    Next we will check the read function, again Horizontal and Vertical.
     */
     CHECK_THROWS(notebook.read(-1, 0, 0, Direction::Horizontal, 5));
     CHECK_THROWS(notebook.read(0, -1, 0, Direction::Horizontal, 5));
     CHECK_THROWS(notebook.read(0, 0, -1, Direction::Horizontal, 5));
-    CHECK_THROWS(notebook.read(168, 0, 0, Direction::Horizontal, 5));
-    CHECK_THROWS(notebook.read(0, 168, 0, Direction::Horizontal, 5));
     CHECK_THROWS(notebook.read(0, 0, 168, Direction::Horizontal, 5));
     CHECK_THROWS(notebook.read(0, 0, 0, Direction::Horizontal, -5));
+
+    CHECK_THROWS(notebook.read(-1, 0, 0, Direction::Vertical, 5));
+    CHECK_THROWS(notebook.read(0, -1, 0, Direction::Vertical, 5));
+    CHECK_THROWS(notebook.read(0, 0, -1, Direction::Vertical, 5));
+    CHECK_THROWS(notebook.read(0, 0, 168, Direction::Vertical, 5));
+    CHECK_THROWS(notebook.read(0, 0, 0, Direction::Vertical, -5));
 
     /*
     Now we will check the erase function.
@@ -38,10 +45,14 @@ TEST_CASE("Bad input")
     CHECK_THROWS(notebook.erase(-1, 0, 0, Direction::Horizontal, 5));
     CHECK_THROWS(notebook.erase(0, -1, 0, Direction::Horizontal, 5));
     CHECK_THROWS(notebook.erase(0, 0, -1, Direction::Horizontal, 5));
-    CHECK_THROWS(notebook.erase(168, 0, 0, Direction::Horizontal, 5));
-    CHECK_THROWS(notebook.erase(0, 168, 0, Direction::Horizontal, 5));
     CHECK_THROWS(notebook.erase(0, 0, 168, Direction::Horizontal, 5));
     CHECK_THROWS(notebook.erase(0, 0, 0, Direction::Horizontal, -5));
+
+    CHECK_THROWS(notebook.erase(-1, 0, 0, Direction::Vertical, 5));
+    CHECK_THROWS(notebook.erase(0, -1, 0, Direction::Vertical, 5));
+    CHECK_THROWS(notebook.erase(0, 0, -1, Direction::Vertical, 5));
+    CHECK_THROWS(notebook.erase(0, 0, 168, Direction::Vertical, 5));
+    CHECK_THROWS(notebook.erase(0, 0, 0, Direction::Vertical, -5));
 
     /*
     Even though it wasnt asked we will do a little check for the show function.
