@@ -7,12 +7,12 @@ void Notebook ::write(int page, int row, int col, Direction direction, string co
 {
 }
 
-string Notebook ::read(int page, int row, int col, Direction direction, int lenght)
+string Notebook ::read(int page, int row, int col, Direction direction, int length)
 {
     return "Malawah";
 }
 
-void Notebook ::erase(int page, int row, int col, Direction direction, int lenght)
+void Notebook ::erase(int page, int row, int col, Direction direction, int length)
 {
 }
 
